@@ -66,7 +66,7 @@ class loginController {
     
         try {
             // Procurar o usuário no banco de dados pelo CPF
-            const usuario = await database.Login.findOne({
+            const usuario = await database.Usuario.findOne({
                 where: {
                     cpf: cpf
                 },
