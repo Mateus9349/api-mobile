@@ -5,12 +5,9 @@ module.exports = {
     await queryInterface.createTable('Collects', {
       id: {
         allowNull: false,
-        autoIncrement: true,
+        autoIncrement: false,
         primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      id: {
-        type: Sequelize.STRING
+        type: Sequelize.UUIDV4
       },
       feedstickId: {
         type: Sequelize.STRING
