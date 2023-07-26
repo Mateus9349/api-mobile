@@ -1,58 +1,55 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
-module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Collects', {
-      id: {
-        allowNull: false,
-        autoIncrement: false,
-        primaryKey: true,
-        type: Sequelize.STRING
-      },
-      feedstickId: {
-        type: Sequelize.STRING
-      },
-      team: {
-        type: Sequelize.STRING
-      },
-      foodExpenses: {
-        type: Sequelize.FLOAT
-      },
-      boatExpenses: {
-        type: Sequelize.FLOAT
-      },
-      rebetaExpenses: {
-        type: Sequelize.FLOAT
-      },
-      otherExpenses: {
-        type: Sequelize.FLOAT
-      },
-      balseExpenses: {
-        type: Sequelize.FLOAT
-      },
-      materialPerDayExpenses: {
-        type: Sequelize.FLOAT
-      },
-      materialExpensesTotal: {
-        type: Sequelize.FLOAT
-      },
-      status: {
-        type: Sequelize.STRING
-      },
-      closedDate: {
-        type: Sequelize.STRING
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
-    });
-  },
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Collects');
-  }
+const { DataTypes } = require('sequelize');
+
+module.exports = (sequelize) => {
+  const Collects = sequelize.define('Collects', {
+    id: {
+      allowNull: false,
+      primaryKey: true,
+      type: DataTypes.UUID
+    },
+    feedstickId: {
+      type: DataTypes.STRING
+    },
+    team: {
+      type: DataTypes.STRING
+    },
+    foodExpenses: {
+      type: DataTypes.FLOAT
+    },
+    boatExpenses: {
+      type: DataTypes.FLOAT
+    },
+    rebetaExpenses: {
+      type: DataTypes.FLOAT
+    },
+    otherExpenses: {
+      type: DataTypes.FLOAT
+    },
+    balseExpenses: {
+      type: DataTypes.FLOAT
+    },
+    materialPerDayExpenses: {
+      type: DataTypes.FLOAT
+    },
+    materialExpensesTotal: {
+      type: DataTypes.FLOAT
+    },
+    status: {
+      type: DataTypes.STRING
+    },
+    closedDate: {
+      type: DataTypes.STRING
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE
+    }
+  });
+
+  return Collects;
 };
