@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Collects.init({
-    id: DataTypes.STRING,
     feedstickId: DataTypes.STRING,
     team: DataTypes.STRING,
     foodExpenses: DataTypes.FLOAT,
