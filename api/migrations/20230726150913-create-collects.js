@@ -2,53 +2,47 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Usuarios', {
+    await queryInterface.createTable('Collects', {
       id: {
         allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.UUIDV4,
-        defaultValue: Sequelize.UUIDV4
+        type: Sequelize.INTEGER
       },
-      UF: {
+      id: {
         type: Sequelize.STRING
       },
-      nome: {
+      feedstickId: {
         type: Sequelize.STRING
       },
-      cpf: {
+      team: {
         type: Sequelize.STRING
       },
-      RG: {
+      foodExpenses: {
+        type: Sequelize.FLOAT
+      },
+      boatExpenses: {
+        type: Sequelize.FLOAT
+      },
+      rebetaExpenses: {
+        type: Sequelize.FLOAT
+      },
+      otherExpenses: {
+        type: Sequelize.FLOAT
+      },
+      balseExpenses: {
+        type: Sequelize.FLOAT
+      },
+      materialPerDayExpenses: {
+        type: Sequelize.FLOAT
+      },
+      materialExpensesTotal: {
+        type: Sequelize.FLOAT
+      },
+      status: {
         type: Sequelize.STRING
       },
-      telefone: {
-        type: Sequelize.STRING
-      },
-      email: {
-        type: Sequelize.STRING
-      },
-      zona: {
-        type: Sequelize.STRING
-      },
-      endereco: {
-        type: Sequelize.STRING
-      },
-      municipio: {
-        type: Sequelize.STRING
-      },
-      cep: {
-        type: Sequelize.STRING
-      },
-      numero: {
-        type: Sequelize.STRING
-      },
-      complemento: {
-        type: Sequelize.STRING
-      },
-      bairro: {
-        type: Sequelize.STRING
-      },
-      senha: {
+      closedDate: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -62,6 +56,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Usuarios');
+    await queryInterface.dropTable('Collects');
   }
 };
