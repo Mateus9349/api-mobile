@@ -1,12 +1,13 @@
+
 'use strict';
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
   const Collects = sequelize.define('Collects', {
     id: {
-      allowNull: false,
-      primaryKey: true,
-      type: DataTypes.UUID
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
     },
     feedstickId: {
       type: DataTypes.STRING
