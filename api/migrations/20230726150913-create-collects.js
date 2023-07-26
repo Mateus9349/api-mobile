@@ -7,7 +7,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: false,
         primaryKey: true,
-        type: Sequelize.UUID
+        type: Sequelize.STRING
       },
       feedstickId: {
         type: Sequelize.STRING
