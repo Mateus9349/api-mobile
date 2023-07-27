@@ -27,14 +27,15 @@ class UsuariosController {
     }
 
     static async criaUsuario(req, res) {
-        const novoUsuario = req.body
+        const novoUsuario = req.body;
         try {
-            const novoUsuarioCriado = await database.Usuario.create(novoUsuario)
-            return res.status(200).json(novoUsuarioCriado)
-        }catch (error) {
-            return req.status(500).json(error.message)
+            const novoUsuarioCriado = await database.Usuario.create(novoUsuario);
+            return res.status(200).json(novoUsuarioCriado);
+        } catch (error) {
+            return res.status(500).json(error.message);
         }
     }
+    
 
     //Atualizar um registro//
     static async atualizaUsuario(req, res){
